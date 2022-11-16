@@ -55,6 +55,20 @@ import {PgRowByVirtualIdPlugin} from './PgRowByVirtualIdPlugin';
 // Order by plugins
 import {PgOrderTxByBlockHeight} from './PgOrderTxByBlockHeightPlugin';
 import {PgOrderMessagesByBlockHeight} from './PgOrderMessagesByBlockHeightPlugin';
+import {PgOrderEventsByBlockHeight} from "./PgOrderEventsByBlockHeightPlugin";
+import {PgOrderNativeTransfersByBlockHeight} from "./PgOrderNativeTransfersByBlockHeightPlugin";
+import {PgOrderExecuteContractMessagesByBlockHeight} from "./PgOrderExecuteContractMessagesByBlockHeightPlugin";
+import {PgOrderGovProposalVotesByBlockHeight} from "./PgOrderGovProposalVotesByBlockHeightPlugin";
+import {PgOrderIBCTransfersByBlockHeight} from "./PgOrderIBCTransfersByBlockHeightPlugin";
+import {PgOrderDistDelegatorClaimsByBlockHeight} from "./PgOrderDistDelegatorClaimsByBlockHeightPlugin";
+import {PgOrderCW20BalanceChangesByBlockHeight} from "./PgOrderCW20BalanceChangesByBlockHeightPlugin";
+import {PgOrderCW20TransfersByBlockHeight} from "./PgOrderCW20TransfersByBlockHeightPlugin";
+import {PgOrderInstantiateContractMessagesByBlockHeight} from "./PgOrderInstantiateContractMessagesByBlockHeightPlugin";
+import {PgOrderStoreContractMessagesByBlockHeight} from "./PgOrderStoreContractMessagesByBlockHeightPlugin";
+import {PgOrderLegacyBridgeSwapsByBlockHeight} from "./PgOrderLegacyBridgeSwapsByBlockHeightPlugin";
+import {PgOrderNativeBalanceChangesByBlockHeight} from "./PgOrderNativeBalanceChangesByBlockHeightPlugin";
+import {PgOrderContractsByInstantiateMessageCodeId} from "./PgOrderContractsByInstantiateMessageCodeIdPlugin";
+import {PgOrderContractsByStoreMessageCodeId} from "./PgOrderContractsByStoreMessageCodeIdPlugin";
 /* eslint-enable */
 
 export const defaultPlugins = [
@@ -114,6 +128,20 @@ const plugins = [
   //order by plugins
   PgOrderTxByBlockHeight,
   PgOrderMessagesByBlockHeight,
+  PgOrderEventsByBlockHeight,
+  PgOrderNativeTransfersByBlockHeight,
+  PgOrderExecuteContractMessagesByBlockHeight,
+  PgOrderGovProposalVotesByBlockHeight,
+  PgOrderIBCTransfersByBlockHeight,
+  PgOrderDistDelegatorClaimsByBlockHeight,
+  PgOrderCW20BalanceChangesByBlockHeight,
+  PgOrderCW20TransfersByBlockHeight,
+  PgOrderInstantiateContractMessagesByBlockHeight,
+  PgOrderStoreContractMessagesByBlockHeight,
+  PgOrderLegacyBridgeSwapsByBlockHeight,
+  PgOrderNativeBalanceChangesByBlockHeight,
+  PgOrderContractsByInstantiateMessageCodeId,
+  PgOrderContractsByStoreMessageCodeId,
 
   makeAddInflectorsPlugin((inflectors) => {
     const {constantCase: oldConstantCase} = inflectors;
