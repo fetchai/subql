@@ -52,7 +52,9 @@ import {makeAddInflectorsPlugin} from 'graphile-utils';
 import PgAggregationPlugin from './PgAggregationPlugin';
 import {PgBlockHeightPlugin} from './PgBlockHeightPlugin';
 import {PgRowByVirtualIdPlugin} from './PgRowByVirtualIdPlugin';
-
+// Order by plugins
+import {PgOrderTxByBlockHeight} from './PgOrderTxByBlockHeightPlugin';
+import {PgOrderMessagesByBlockHeight} from './PgOrderMessagesByBlockHeightPlugin';
 /* eslint-enable */
 
 export const defaultPlugins = [
@@ -109,6 +111,10 @@ const plugins = [
   PgAggregationPlugin,
   PgBlockHeightPlugin,
   PgRowByVirtualIdPlugin,
+  //order by plugins
+  PgOrderTxByBlockHeight,
+  PgOrderMessagesByBlockHeight,
+
   makeAddInflectorsPlugin((inflectors) => {
     const {constantCase: oldConstantCase} = inflectors;
     const enumValues = new Set();
