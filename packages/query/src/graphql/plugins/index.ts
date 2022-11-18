@@ -53,22 +53,21 @@ import PgAggregationPlugin from './PgAggregationPlugin';
 import {PgBlockHeightPlugin} from './PgBlockHeightPlugin';
 import {PgRowByVirtualIdPlugin} from './PgRowByVirtualIdPlugin';
 // Order by plugins
-import {PgOrderTxByBlockHeight} from './PgOrderTxByBlockHeightPlugin';
-import {PgOrderMessagesByBlockHeight} from './PgOrderMessagesByBlockHeightPlugin';
-import {PgOrderEventsByBlockHeight} from "./PgOrderEventsByBlockHeightPlugin";
-import {PgOrderNativeTransfersByBlockHeight} from "./PgOrderNativeTransfersByBlockHeightPlugin";
-import {PgOrderExecuteContractMessagesByBlockHeight} from "./PgOrderExecuteContractMessagesByBlockHeightPlugin";
-import {PgOrderGovProposalVotesByBlockHeight} from "./PgOrderGovProposalVotesByBlockHeightPlugin";
-import {PgOrderIBCTransfersByBlockHeight} from "./PgOrderIBCTransfersByBlockHeightPlugin";
-import {PgOrderDistDelegatorClaimsByBlockHeight} from "./PgOrderDistDelegatorClaimsByBlockHeightPlugin";
-import {PgOrderCW20BalanceChangesByBlockHeight} from "./PgOrderCW20BalanceChangesByBlockHeightPlugin";
-import {PgOrderCW20TransfersByBlockHeight} from "./PgOrderCW20TransfersByBlockHeightPlugin";
-import {PgOrderInstantiateContractMessagesByBlockHeight} from "./PgOrderInstantiateContractMessagesByBlockHeightPlugin";
-import {PgOrderStoreContractMessagesByBlockHeight} from "./PgOrderStoreContractMessagesByBlockHeightPlugin";
-import {PgOrderLegacyBridgeSwapsByBlockHeight} from "./PgOrderLegacyBridgeSwapsByBlockHeightPlugin";
-import {PgOrderNativeBalanceChangesByBlockHeight} from "./PgOrderNativeBalanceChangesByBlockHeightPlugin";
-import {PgOrderContractsByInstantiateMessageCodeId} from "./PgOrderContractsByInstantiateMessageCodeIdPlugin";
-import {PgOrderContractsByStoreMessageCodeId} from "./PgOrderContractsByStoreMessageCodeIdPlugin";
+import {OrderCW20BalanceChangesByBlockHeight} from './fetch/wasm'
+import {OrderCW20TransfersByBlockHeight} from './fetch/wasm'
+import {OrderExecuteContractMessagesBy} from './fetch/wasm'
+import {OrderIBCTransfersByBlockHeight} from './fetch/wasm'
+import {OrderLegacyBridgeSwapsByBlockHeight} from './fetch/wasm'
+import {OrderNativeBalanceChangesByBlockHeight} from './fetch/bank'
+import {OrderNativeTransfersByBlockHeight} from './fetch/bank'
+import {OrderContractsByInstantiateMsgCodeId} from './fetch/contracts'
+import {OrderContractsByStoreMsgCodeId} from './fetch/contracts'
+import {OrderGovProposalVotesByBlockHeight} from './fetch/governance'
+import {OrderEventsByBlockHeight} from './fetch/primitives'
+import {OrderTransactionsByBlockHeight} from './fetch/primitives'
+import {OrderMessagesByBlockHeight} from './fetch/primitives'
+import {OrderAuthzExecsOrderByBlockHeight} from './fetch/staking'
+import {OrderDistDelegatorClaims} from './fetch/staking'
 /* eslint-enable */
 
 export const defaultPlugins = [
@@ -126,22 +125,21 @@ const plugins = [
   PgBlockHeightPlugin,
   PgRowByVirtualIdPlugin,
   //order by plugins
-  PgOrderTxByBlockHeight,
-  PgOrderMessagesByBlockHeight,
-  PgOrderEventsByBlockHeight,
-  PgOrderNativeTransfersByBlockHeight,
-  PgOrderExecuteContractMessagesByBlockHeight,
-  PgOrderGovProposalVotesByBlockHeight,
-  PgOrderIBCTransfersByBlockHeight,
-  PgOrderDistDelegatorClaimsByBlockHeight,
-  PgOrderCW20BalanceChangesByBlockHeight,
-  PgOrderCW20TransfersByBlockHeight,
-  PgOrderInstantiateContractMessagesByBlockHeight,
-  PgOrderStoreContractMessagesByBlockHeight,
-  PgOrderLegacyBridgeSwapsByBlockHeight,
-  PgOrderNativeBalanceChangesByBlockHeight,
-  PgOrderContractsByInstantiateMessageCodeId,
-  PgOrderContractsByStoreMessageCodeId,
+  OrderCW20BalanceChangesByBlockHeight,
+  OrderCW20TransfersByBlockHeight,
+  OrderExecuteContractMessagesBy,
+  OrderIBCTransfersByBlockHeight,
+  OrderLegacyBridgeSwapsByBlockHeight,
+  OrderNativeBalanceChangesByBlockHeight,
+  OrderNativeTransfersByBlockHeight,
+  OrderContractsByInstantiateMsgCodeId,
+  OrderContractsByStoreMsgCodeId,
+  OrderGovProposalVotesByBlockHeight,
+  OrderEventsByBlockHeight,
+  OrderTransactionsByBlockHeight,
+  OrderMessagesByBlockHeight,
+  OrderAuthzExecsOrderByBlockHeight,
+  OrderDistDelegatorClaims,
 
   makeAddInflectorsPlugin((inflectors) => {
     const {constantCase: oldConstantCase} = inflectors;
