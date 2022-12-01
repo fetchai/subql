@@ -14,7 +14,6 @@ if (!!OPEN_TELEMETRY_SERVICE_NAME && !!OPEN_TELEMETRY_COLLECTOR_URL) {
   // configure the SDK to export telemetry data to the console
   // enable all auto-instrumentations from the meta package
   const exporterOptions = {
-    // TODO: env var
     url: OPEN_TELEMETRY_COLLECTOR_URL,
     credentials: credentials.createInsecure(),
   };
